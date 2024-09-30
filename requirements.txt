@@ -9,6 +9,5 @@ timm==0.4.12
 tqdm==4.66.1
 torch-sparse==0.6.17
 torch-scatter==2.1.1
-pyg-lib @ https://data.pyg.org/whl/torch-2.1.0+cu118.html
 torch-geometric==2.5.3
 ogb==1.3.6
