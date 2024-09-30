@@ -1,0 +1,47 @@
+name: node_classification_lr
+model_name: gcn
+
+data:
+  data_root: data\pascalvoc-sp
+  dataset: pascalvoc-sp
+  num_workers: 1
+
+# model for data
+model:
+  _target_: models.gcn.GCN_lr_conv
+  in_channels: 14
+  out_channels: 21
+  num_hid: 256
+  num_layers: 8
+  dropout: 0.1
+
+# optimizer1 is for full model training, optimizer 2 is for further tuning of sample layers
+optimizer1:
+  _target_: torch.optim.AdamW
+  lr: 0.0005
+  weight_decay: 0.0005
+
+optimizer2:
+  _target_: torch.optim.Adam
+  lr: 0.0005
+  weight_decay: 0.005
+
+
+# lr scheduler for training task optimizer
+lr_scheduler:
+  _target_: torch.optim.lr_scheduler.MultiStepLR
+  milestones: [100, 125, 150, 175]
+  gamma: 0.2
+
+# epoch is #epoch for full model training, save_num_model is for sampling
+epoch: 200
+save_num_model: 100
+
+# name of target layers
+train_layer: ['convs.7.weight', 'convs.7.bias']
+
+# parameter data root
+param:
+  data_root: param_data/gcn/pascalvoc-sp/data.pt
+  k: 50
+  num_workers: 4

@@ -1,0 +1,104 @@
+name: ae_ddpm
+name_data: cora
+name_net: GCN2
+
+
+# The autoencoder for parameters
+param_ae_model:
+  _target_: core.module.modules.encoder.small
+  in_dim: 231 #23063
+  input_noise_factor: 0.001
+  latent_noise_factor: 0.5
+
+# The autoencoder for node classification
+graph_ae_model:
+  _target_: core.module.modules.graph_encoder.GraphVAE_node
+  input_feat_dim:
+  hidden_dim1:
+  hidden_dim2:
+  output_dim:
+  input_noise_factor: 0.001
+  latent_noise_factor: 0.1
+  task: "node_classification"
+
+
+# The denoising network for ddpm
+model:
+  arch:
+    _target_: core.module.modules.unet.AE_CNN_bottleneck
+    in_channel: 1
+    in_dim: 12
+
+
+
+beta_schedule:
+  start: 1e-4
+  end: 2e-2
+  schedule: linear
+  n_timestep: 1000
+
+model_mean_type: eps
+model_var_type: fixedlarge
+loss_type: mse
+
+train:
+
+  optimizer:
+    _target_: torch.optim.AdamW
+    lr: 1e-3
+    weight_decay: 2e-3
+
+  graph_optimizer:
+    _target_: torch.optim.Adam
+    lr: 1e-3
+    weight_decay: 2e-3
+
+
+  ae_optimizer:
+    _target_: torch.optim.AdamW
+    lr: 1e-2
+    weight_decay: 2e-3
+
+  lr_scheduler:
+
+  split_epoch_1: 200
+  split_epoch_2: 9000
+
+  trainer:
+    _target_: pytorch_lightning.Trainer
+    _convert_: all
+    max_epochs: 15000
+    check_val_every_n_epoch:
+    val_check_interval : 3000
+    log_every_n_steps:
+    limit_val_batches: 1
+    limit_test_batches: 1
+    devices:
+      - ${device.id}
+
+    enable_model_summary: false
+
+    callbacks:
+    - _target_: pytorch_lightning.callbacks.ModelCheckpoint
+      monitor: 'best_g_acc'
+      mode: 'max'
+      save_top_k: 1
+      save_last: true
+      dirpath: ${output_dir}/${task.model_name}/GNN_Diff
+      filename: 'ddpm-{epoch}-{best_g_acc:.4f}'
+      verbose: true
+
+    - _target_: pytorch_lightning.callbacks.ModelCheckpoint
+      dirpath: ${output_dir}/${task.model_name}/PAE
+      filename: "ae-{epoch}-{ae_acc:.4f}"
+      monitor: 'ae_acc'
+      mode: 'max'
+      save_top_k: 1
+      save_last: false
+      verbose: true
+
+    logger:
+      _target_: pytorch_lightning.loggers.TensorBoardLogger
+      save_dir: ${output_dir}/${system.name}/
+      name: '.'
+      version: '.'

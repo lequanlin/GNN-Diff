@@ -1,0 +1,46 @@
+name: node_classification
+model_name: gcn2
+
+data:
+  data_root: data\cora
+  dataset: cora
+  num_workers: 1
+
+# model for data
+model:
+  _target_: models.gcn.GCN_2_conv
+  in_channels: 1433
+  out_channels: 7
+  num_hid: 32
+  dropout: 0.1
+
+# optimizer1 is for full model training, optimizer 2 is for further tuning of sample layers
+optimizer1:
+  _target_: torch.optim.Adam
+  lr: 0.05
+  weight_decay: 0.005
+
+optimizer2:
+  _target_: torch.optim.Adam
+  lr: 0.0005
+  weight_decay: 0.005
+
+
+# lr scheduler for training task optimizer
+lr_scheduler:
+  _target_: torch.optim.lr_scheduler.MultiStepLR
+  milestones: [100, 125, 150, 175]
+  gamma: 0.2
+
+# epoch is #epoch for full model training, save_num_model is for sampling
+epoch: 200
+save_num_model: 100
+
+# name of target layers
+train_layer: ['conv2.bias', 'conv2.lin.weight']
+
+# parameter data root
+param:
+  data_root: param_data/gcn2/cora/data.pt
+  k: 10
+  num_workers: 4
