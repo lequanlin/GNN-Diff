@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 
-@author: Lequan Lin
-
 This is the code to support searching algorithms for GNNs on link prediction.
 
 Designed based on https://github.com/tomonori-masui/graph-neural-networks/blob/main/gnn_pyg_implementations.ipynb
