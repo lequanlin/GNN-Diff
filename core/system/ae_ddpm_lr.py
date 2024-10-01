@@ -21,8 +21,6 @@ import time
 
 """
 
-Lena comment:
-
 The model class is designed based on PyTorch Lightning 
 https://lightning.ai/docs/pytorch/stable/common/lightning_module.html
 A Lightning module typically includes:
