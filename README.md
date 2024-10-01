@@ -33,9 +33,9 @@ ogb==1.3.6
 ## GNN Hyperparameter Tuning
 ```bash
 gnn_tuning_nc.py  # Basic node classification
-gnn_tuning_nc_large.py
-gnn_tuning_nc_lr.py
-gnn_tuning_lp.py
+gnn_tuning_nc_large.py # Node classification on large graphs
+gnn_tuning_nc_lr.py  # Node classification on long-range graphs
+gnn_tuning_lp.py  # Link prediction
 ```
 
 ## GNN-Diff Training and Testing
