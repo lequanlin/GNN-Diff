@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 
-@author: Lequan Lin
-
 This is the code to support searching algorithms for GNNs on node classification.
 
 """
