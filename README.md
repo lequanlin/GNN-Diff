@@ -32,12 +32,15 @@ ogb==1.3.6
 
 ## GNN Hyperparameter Tuning
 ```bash
-python SpecSTG_exe.py -- load_model = True
+gnn_tuning_nc.py  # Basic node classification
+gnn_tuning_nc_large.py
+gnn_tuning_nc_lr.py
+gnn_tuning_lp.py
 ```
 
 ## GNN-Diff Training and Testing
 ```bash
-python SpecSTG_exe.py -- load_model = False
+train_gnn_diff.py
 ```
 
 
