@@ -11,9 +11,11 @@ Please "star" us if you find the code helpful ✧◝(⁰▿⁰)◜✧
 
 How GNN-Diff works for node classification. (1) Input graph data: input graph signals, adjacency matrix, and train/validation ground truth labels. (2) Parameter collection: we use a coarse search with a small search space to select an appropriate hyperparameter configuration for the target GNN, and then collect model checkpoints with this configuration. (3) Training: PAE and GAE are firstly trained to produce latent parameters and the graph condition, and then G-LDM learns how to recover latent parameters from white noises with the graph condition as a guidance. (4) Inference: after sampling latent parameters from G-LDM, GNN parameters are reconstructed with the PAE decoder and returned to the target GNN for prediction.
 
-![Method_v1](https://github.com/user-attachments/assets/b0b96f63-45e0-4977-9583-45ab979d2e35)
 
 ## Requirements
+
+![Method_v1](https://github.com/user-attachments/assets/2ba95ab8-39c9-4fc8-9635-4a5914d4d520)
+
 ```bash 
 hydra-core==1.3.2
 matplotlib==3.7.3
