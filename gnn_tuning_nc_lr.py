@@ -1,6 +1,5 @@
    # -*- coding: utf-8 -*-
 """
-@author: Lequan Lin
 
 Run this code for grid search, random search, and coarse search
 
