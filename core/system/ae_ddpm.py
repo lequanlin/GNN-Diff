@@ -22,8 +22,6 @@ import time
 
 """
 
-Lena comment:
-
 The model class is designed based on PyTorch Lightning 
 https://lightning.ai/docs/pytorch/stable/common/lightning_module.html
 A Lightning module typically includes:
@@ -166,12 +164,6 @@ class AE_DDPM(DDPM):
                     self.manual_backward(loss)
                     graph_ae_optimizer.step()
                 self.validation_step(batch, batch_idx, **kwargs)
-
-                # graph_ae_optimizer.zero_grad()
-                # self.manual_backward(loss)
-                # graph_ae_optimizer.step()
-                #
-                # self.validation_step(batch, batch_idx, **kwargs)
 
         ### Before the split epoch, the autoencoder is trained ###
         elif  self.current_epoch < self.split_epoch_p: # current_epoch is a property of lightning, which grows with the training process
