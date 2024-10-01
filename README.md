@@ -45,6 +45,6 @@ train_gnn_diff.py
 
 ## Note
 
-Our code is adapted from the implementation code of [[p-diff]](https://github.com/NUS-HPC-AI-Lab/Neural-Network-Parameter-Diffusion).
+Our code is adapted from the implementation code of [[p-diff]](https://github.com/NUS-HPC-AI-Lab/Neural-Network-Parameter-Diffusion). Wang, K., Xu, Z., Zhou, Y., Zang, Z., Darrell, T., Liu, Z., & You, Y. (2024). Neural network diffusion. arXiv preprint arXiv:2402.13144.
 
 
