@@ -472,8 +472,7 @@ class AE_CNN(nn.Module):
         return emb_dec4.reshape(input_shape)
 
 
-##
-## LDM的backbone(同时也是convAE work for 30k量级size模型 但是有些输入特征维度不同 所以下面还有一个AE_CNN_bottleneck_ori,是convAE的backbone)
+
 class AE_CNN_bottleneck(nn.Module):
     def __init__(
             self,
