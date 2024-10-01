@@ -9,8 +9,6 @@ from torch_geometric.nn.dense.linear import Linear
 
 """
 
-Lena comment:
-
 The idea of Graph VAE is proposed in "Kipf, T. N., & Welling, M. (2016). Variational graph auto-encoders. arXiv preprint arXiv:1611.07308."
 The code here is its PyTorch implementation from https://github.com/zfjsail/gae-pytorch
 
@@ -104,75 +102,6 @@ class GraphVAEncoder(nn.Module):
                 x = F.gelu(x)
                 x = F.dropout(x, p=self.dropout, training=self.training)
         return x
-
-    # def encode_AE(self, x, adj):
-    #     hidden_l = self.lin2(self.act(self.lin1(x)))
-    #     return hidden_l
-
-    # def encode_AE(self, x, adj):
-    #     hidden_l = self.lin1(x)
-    #     return hidden_l
-
-    # def encode_AE_link(self, x, adj):
-    #     hidden1 = self.gc1(x, adj)
-    #     return self.gc2(hidden1, adj)
-
-    ## GCN1 as encoder
-    # def encode_AE(self, x, adj):
-    #     return self.gc1(x, adj)
-
-    # def encode_AE(self, x, adj):
-    #
-    #     hidden_g = self.gc2(self.gc1(x, adj), adj)
-    #     hidden_g = F.dropout(hidden_g,self.dropout, self.training)
-    #
-    #     x = F.dropout(x,self.dropout, self.training)
-    #     hidden_l = self.act(self.lin1(x))
-    #     hidden_l = F.dropout(hidden_l,self.dropout, self.training)
-    #     hidden_l = self.act(self.lin2(hidden_l))
-    #     hidden_l = F.dropout(hidden_l, self.dropout, self.training)
-    #     # hidden_l = self.act(self.lin2(self.act(self.lin1(x))))
-    #
-    #     return self.weight1 * hidden_g + self.weight2 * hidden_l
-
-    # def encode_AE(self, x, adj):
-    #
-    #     hidden = []
-    #
-    #     hidden_g_1 = self.gc2(self.gc1(x, adj), adj)
-    #     hidden.append(self.weight1 * hidden_g_1)
-    #     hidden_g_2 = self.gc3(x, adj)
-    #     hidden.append(self.weight2 * hidden_g_2)
-    #
-    #     x = F.dropout(x,self.dropout, self.training)
-    #     hidden_l = self.act(self.lin1(x))
-    #     hidden_l = F.dropout(hidden_l,self.dropout, self.training)
-    #     hidden.append(self.weight3 * hidden_l)
-    #
-    #     return self.lin3(torch.cat(hidden, dim=1))
-
-
-
-    # def encode_AE(self, x, adj):
-    #
-    #     hidden = []
-    #
-    #     x = F.dropout(x, self.dropout, self.training)
-    #     hidden_l = self.act(self.lin1(x))
-    #     hidden_l = F.dropout(hidden_l, self.dropout, self.training)
-    #     hidden.append(self.weight1 * hidden_l)
-    #
-    #     # hidden_g_1 = self.gc2(self.gc1(x, adj), adj)
-    #     # hidden.append(self.weight1 * hidden_g_1)
-    #     # hidden_g_2 = self.gc3(x, adj)
-    #     # hidden.append(self.weight2 * hidden_g_2)
-    #
-    #     hidden_g1 = torch.spmm(adj,hidden_l)
-    #     hidden.append(self.act(self.weight2 * hidden_g1))
-    #     hidden_g2 = torch.spmm(adj, hidden_g1)
-    #     hidden.append(self.act(self.weight3 * hidden_g2))
-    #
-    #     return self.lin3(torch.cat(hidden, dim=1))
 
 
 
