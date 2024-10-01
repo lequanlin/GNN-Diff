@@ -43,4 +43,8 @@ gnn_tuning_lp.py  # Link prediction
 train_gnn_diff.py
 ```
 
+## Note
+
+Our code is adapted from the implementation code of [[p-diff]](https://github.com/NUS-HPC-AI-Lab/Neural-Network-Parameter-Diffusion).
+
 
