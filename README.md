@@ -15,8 +15,29 @@ How GNN-Diff works for node classification. (1) Input graph data: input graph si
 
 ## Requirements
 ```bash 
-torch 2.0.1
-torch_geometric 2.3.1
-pytorchts == 0.6.0
-gluonts == 0.10.0
+hydra-core==1.3.2
+matplotlib==3.7.3
+numpy==1.24.4
+pandas == 1.5.3
+omegaconf==2.3.0
+pytorch_lightning==2.1.2
+scikit_learn==1.3.1
+timm==0.4.12
+tqdm==4.66.1
+torch-sparse==0.6.17
+torch-scatter==2.1.1
+torch-geometric==2.5.3
+ogb==1.3.6
 ```
+
+## GNN Hyperparameter Tuning
+```bash
+python SpecSTG_exe.py -- load_model = True
+```
+
+## GNN-Diff Training and Testing
+```bash
+python SpecSTG_exe.py -- load_model = False
+```
+
+
