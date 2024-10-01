@@ -613,18 +613,6 @@ class AE_CNN_bottleneck(nn.Module):
 
         emb_dec4 = emb_dec4.reshape(input_shape)
 
-        # emb_enc1 = self.enc1(input + time_info)
-        # emb_enc2 = self.enc2(emb_enc1 + time_info)
-        # emb_enc3 = self.enc3(emb_enc2 + time_info)
-        # emb_enc4 = self.enc4(emb_enc3 + time_info)
-        #
-        # emb_dec1 = self.dec1(emb_enc4 + time_info) + emb_enc3
-        # emb_dec2 = self.dec2(emb_dec1 + time_info) + emb_enc2
-        # emb_dec3 = self.dec3(emb_dec2 + time_info) + emb_enc1
-        # emb_dec4 = self.dec4(emb_dec3 + time_info)
-        #
-        # emb_dec4 = emb_dec4.reshape(input_shape)
-
 
         return emb_dec4
 
