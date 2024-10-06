@@ -1,6 +1,6 @@
 # GNN-Diff: Boost Graph Neural Networks with Minimal Hyperparameter Tuning
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)  ![cs.LG](https://img.shields.io/badge/cs.LG-arXiv-red)
 
 ## Description
 This is the code for the paper "Diffusing to the Top: Boost Graph Neural Networks with Minimal Hyperparameter Tuning".
