@@ -2,6 +2,19 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)  ![cs.LG](https://img.shields.io/badge/cs.LG-arXiv-red)
 
+## Citation
+```bash
+@misc{lin2024diffusing,
+  author       = {Lequan Lin and Dai Shi and Andi Han and Zhiyong Wang and Junbin Gao},
+  title        = {Diffusing to the Top: Boost Graph Neural Networks with Minimal Hyperparameter Tuning},
+  year         = {2024},
+  publisher    = {GitHub},
+  journal      = {International Conference on Learning Representations (ICLR)},
+  howpublished = {\url{https://github.com/YOUR_GITHUB_REPO}},
+  note         = {ICLR 2025},
+}
+```
+
 ## Description
 This is the code for the paper "Diffusing to the Top: Boost Graph Neural Networks with Minimal Hyperparameter Tuning".
 
