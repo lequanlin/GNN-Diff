@@ -1,19 +1,6 @@
-# GNN-Diff: Boost Graph Neural Networks with Minimal Hyperparameter Tuning
+# GNN-Diff: Boost Graph Neural Networks with Minimal Hyperparameter Tuning [ICLR2025]
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)  ![cs.LG](https://img.shields.io/badge/cs.LG-arXiv-red)
-
-## Citation
-```bash
-@misc{lin2024diffusing,
-  author       = {Lequan Lin and Dai Shi and Andi Han and Zhiyong Wang and Junbin Gao},
-  title        = {Diffusing to the Top: Boost Graph Neural Networks with Minimal Hyperparameter Tuning},
-  year         = {2024},
-  publisher    = {GitHub},
-  journal      = {International Conference on Learning Representations (ICLR)},
-  howpublished = {\url{https://github.com/YOUR_GITHUB_REPO}},
-  note         = {ICLR 2025},
-}
-```
 
 ## Description
 This is the code for the paper "Diffusing to the Top: Boost Graph Neural Networks with Minimal Hyperparameter Tuning".
@@ -58,6 +45,19 @@ gnn_tuning_lp.py  # Link prediction
 ## GNN-Diff Training and Testing
 ```bash
 train_gnn_diff.py
+```
+
+## Citation
+```bash
+@misc{lin2024diffusing,
+  author       = {Lequan Lin and Dai Shi and Andi Han and Zhiyong Wang and Junbin Gao},
+  title        = {Diffusing to the Top: Boost Graph Neural Networks with Minimal Hyperparameter Tuning},
+  year         = {2024},
+  publisher    = {GitHub},
+  journal      = {International Conference on Learning Representations (ICLR)},
+  howpublished = {\url{[https://github.com/YOUR_GITHUB_REPO](https://github.com/lequanlin/GNN-Diff)}},
+  note         = {ICLR 2025},
+}
 ```
 
 ## Note
