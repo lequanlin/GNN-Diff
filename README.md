@@ -55,7 +55,7 @@ train_gnn_diff.py
   year         = {2024},
   publisher    = {GitHub},
   journal      = {International Conference on Learning Representations (ICLR)},
-  howpublished = {\url{[https://github.com/YOUR_GITHUB_REPO](https://github.com/lequanlin/GNN-Diff)}},
+  howpublished = {\url{https://github.com/lequanlin/GNN-Diff}},
   note         = {ICLR 2025},
 }
 ```
