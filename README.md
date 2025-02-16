@@ -53,9 +53,6 @@ train_gnn_diff.py
   author       = {Lequan Lin and Dai Shi and Andi Han and Zhiyong Wang and Junbin Gao},
   title        = {Diffusing to the Top: Boost Graph Neural Networks with Minimal Hyperparameter Tuning},
   year         = {2024},
-  publisher    = {GitHub},
-  journal      = {International Conference on Learning Representations (ICLR)},
-  howpublished = {\url{https://github.com/lequanlin/GNN-Diff}},
   note         = {ICLR 2025},
 }
 ```
